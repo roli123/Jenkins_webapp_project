@@ -35,14 +35,14 @@ pipeline{
             }
         }
 
-        stage('docker build & docker push to Nexus repo'){
+        // stage('docker build & docker push to Nexus repo'){
 
-            steps{
+        //     steps{
 
-                script{
-                    
-                }
-            }
+        //         script{
+
+        //         }
+        //     }
 
         }
         
