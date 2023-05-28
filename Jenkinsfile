@@ -9,6 +9,7 @@ pipeline{
             agent{
                 docker{
                     image 'maven'
+                    args '-u root'
                 }
             }
 
