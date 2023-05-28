@@ -8,8 +8,7 @@ pipeline{
             
             agent{
                 docker{
-                    image 'maven:3-alpine'
-                    args '-u root'
+                    image 'maven'
                 }
             }
 
@@ -18,8 +17,7 @@ pipeline{
                 script{
                     withSonarQubeEnv(credentialsId: 'Sonar-token') {
 
-                        sh 'mvn clean'
-                        sh 'mvn sonar:sonar'
+                        sh 'mvn clean package sonar:sonar'
                     }
                 }
                     
