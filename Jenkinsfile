@@ -4,7 +4,7 @@ pipeline{
     
     stages {
 
-        stage('Static code analysis'){
+        stage('Static code check'){
             
             agent{
                 docker{
@@ -22,6 +22,28 @@ pipeline{
                 }
                     
             }
+        }
+
+        stage('Quality gate status'){
+
+            steps{
+
+                script{
+
+                    waitForQualityGate abortPipeline: false, credentialsId: 'Sonar-token'
+                }
+            }
+        }
+
+        stage('docker build & docker push to Nexus repo'){
+
+            steps{
+
+                script{
+                    
+                }
+            }
+
         }
         
     }
