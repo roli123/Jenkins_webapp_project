@@ -11,11 +11,11 @@ pipeline{
                     image 'maven'
                 }
             }
-            
+
             steps{
                 
                 script{
-                    withSonarQubeEnv(credentialsId: 'Sonar-server') {
+                    withSonarQubeEnv(credentialsId: 'Sonar-token') {
 
                         sh 'mvn clean package sonar:sonar'
                     }
