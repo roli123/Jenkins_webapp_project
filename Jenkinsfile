@@ -8,7 +8,7 @@ pipeline{
             
             agent{
                 docker{
-                    image 'maven:eclipse-temurin:11-jdk-alpine'
+                    image 'maven:3-alpine'
                     args '-u root'
                 }
             }
